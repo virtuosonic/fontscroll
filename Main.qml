@@ -23,12 +23,19 @@ Window {
 				text: sampleColor
 				onClicked: colorDialog.open()
 			}
-			SpinBox{
+			SpinBox {
 				id: displaysize
 				from: 8
 				to: 48
 				value: 18
 				editable: true
+			}
+			Item {
+				Layout.fillWidth: true
+			}
+			Button {
+				text: "ℹ"
+				onClicked: about.open()
 			}
 		}
 
@@ -59,5 +66,25 @@ Window {
 		id: colorDialog
 		selectedColor: sampleColor
 		onAccepted: sampleColor = selectedColor
+	}
+	Popup {
+		id: about
+		anchors.centerIn: parent
+		ColumnLayout {
+			Text {
+				color: "#585858"
+				text: qsTr("FontScroll 1.0")
+				font.bold: true
+				horizontalAlignment: Text.AlignHCenter
+				font.pointSize: 24
+			}
+			Text {
+				text: qsTr("Author:\tGabriel Espinoza <virtuosonic@github.com>")
+			}
+			Text {
+				text: qsTr("<a href='http://github.com/virtuosonic/fontscroll/'>http://github.com/virtuosonic/fontscroll/</a>")
+				horizontalAlignment: Text.AlignHCenter
+			}
+		}
 	}
 }
