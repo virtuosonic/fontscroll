@@ -84,6 +84,7 @@ Window {
 			Text {
 				text: qsTr("<a href='http://github.com/virtuosonic/fontscroll/'>http://github.com/virtuosonic/fontscroll/</a>")
 				horizontalAlignment: Text.AlignHCenter
+				onLinkActivated: Qt.openUrlExternally("http://github.com/virtuosonic/fontscroll/")
 			}
 		}
 	}
